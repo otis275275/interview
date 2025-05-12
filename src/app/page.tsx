@@ -26,7 +26,7 @@ export default function CodingChallenge() {
       id: 2,
       title: "Fix CSV Upload Duplicates",
       description:
-        "When uploading the CSV from src\\data\\sampleUsers.csv, an error occurs: 'Failed to process CSV: Error: Duplicate entries found in CSV. Validation error'. Add a truncateTable() function in src\\utils\\csvParser.ts before the parseCsvToDatabase function. The function should clear existing records before new ones are inserted. Add the call to this function at line 97 in the try block.",
+        "When uploading the CSV from src\\data\\sampleUsers.csv, an error occurs: 'Failed to process CSV: Error: Duplicate entries found in CSV. Validation error'. Add a truncateTable() function in src\\utils\\csvParser.ts before the parseCsvToDatabase function. The function should clear existing records before new ones are inserted.",
       difficulty: "Medium",
       completed: false,
     },
