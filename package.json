@@ -6,9 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "migrate": "npx sequelize-cli db:migrate",
-    "migrate:undo": "npx sequelize-cli db:migrate:undo"
+    "lint": "next lint"
   },
   "dependencies": {
     "@tanstack/react-table": "^8.13.2",
@@ -17,7 +15,6 @@
     "csv-writer": "^1.6.0",
     "formidable": "^3.5.1",
     "next": "15.3.1",
-    "pg-hstore": "^2.3.4",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "sequelize": "^6.32.1",
