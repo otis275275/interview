@@ -75,10 +75,6 @@ export default function CodingChallenge() {
             <strong>Goal:</strong> Complete all tasks below. Your updates should
             be clean, readable, and effective.
           </li>
-          <li>
-            <strong>Setup database:</strong> Run <code>sequelize init</code> to
-            initialize the database configuration.
-          </li>
         </ul>
       </section>
 
