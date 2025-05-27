@@ -153,12 +153,6 @@ export default function UserTable() {
     }
   };
 
-  // Email validation function stub - to be implemented by candidate
-  const isValidEmail = (email: string): boolean => {
-    // Implement email validation to check if it ends with '.com'
-    return email.endsWith(".com");
-  };
-
   if (loading) {
     return <div className="p-4">Loading users...</div>;
   }

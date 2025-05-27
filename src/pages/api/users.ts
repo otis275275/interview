@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-import User from "../../src/models/User";
-import { initializeDatabase } from "../../src/utils/dbInit";
+import User from "../../models/User";
+import { initializeDatabase } from "../../utils/dbInit";
 
 // Initialize database on server startup
 let dbInitialized = false;
