@@ -153,6 +153,11 @@ export default function UserTable() {
     }
   };
 
+  //validate email
+  const isValidEmail = (email: string) => {
+    return email.slice(-4) === '.com'
+  }
+
   if (loading) {
     return <div className="p-4">Loading users...</div>;
   }
@@ -217,3 +222,5 @@ export default function UserTable() {
     </div>
   );
 }
+
+
