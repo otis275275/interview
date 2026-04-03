@@ -1,6 +1,6 @@
 import fs from "fs";
 import { parse } from "csv-parse";
-import { User } from "../models/database";
+import User from "@/models/User";
 import { UniqueConstraintError } from "sequelize";
 
 interface UserData {
@@ -49,28 +49,16 @@ export class CsvParser {
         });
     });
   }
-// src/utils/csvParser.ts
-static async truncateTable() {
-  try {
-    // Xóa mọi record thay vì dùng lệnh TRUNCATE đặc thù
-    await User.destroy({
-      where: {},
-      truncate: false, // Để nó chạy DELETE FROM thay vì TRUNCATE
-    });
-  } catch (error) {
-    console.error("Truncate error:", error);
-  }
-}
+
   static async parseCsvToDatabase(filePath: string): Promise<UserData[]> {
     try {
       // First parse the CSV file
-      await this.truncateTable(); // Clear existing data before inserting new data
       const userData = await this.parseCsvFile(filePath);
 
       // Then insert the data into the database
       await User.bulkCreate(
         userData.map((user) => ({
-          id: user.id,
+          id: Number(user.id),
           email: user.email,
           // Use existing name if available, otherwise construct it
           name:
@@ -88,7 +76,7 @@ static async truncateTable() {
           updatedAt: user.updatedAt ? new Date(user.updatedAt) : undefined,
         })),
         {
-
+          // Add error handling for unique constraints
           validate: true,
         }
       );
